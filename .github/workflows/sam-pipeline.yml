@@ -17,7 +17,7 @@ jobs:
       # sam build 
       - run: sam build --use-container
 
-# Run Unit tests- Specify unit tests here 
+      # Run Unit tests - Specify unit tests here 
 
-# sam deploy
+      # sam deploy
       - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-hello-world --s3-bucket neighborcirclesdeployment --capabilities CAPABILITY_IAM --region us-east-2

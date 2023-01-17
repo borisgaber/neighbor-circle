@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Neighbor Circle",
   "type": "module",
-  "main": "server/index.js",
-  "repository": "https://github.com/borisgaber/neighbor-circle/actions",
+  "main": "server/index.mjs",
+  "repository": "https://github.com/borisgaber/neighbor-circle",
   "author": "Boris Gaber",
   "license": "MIT"
 }

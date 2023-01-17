@@ -1,22 +1,3 @@
-
-// export const lambdaHandler = async (event, context) => {
-//     try {
-//         return {
-//             'statusCode': 200,
-//             'body': JSON.stringify({
-//                 message: 'hello world',
-//             })
-//         }
-//     } catch (err) {
-//         console.log(err);
-//         return err;
-//     }
-// };
-
-
-//import AWS from 'aws-sdk';
-//const dynamo = new AWS.DynamoDB.DocumentClient();
-
 import { DynamoDBClient, ScanCommand } from "@aws-sdk/client-dynamodb";
 const dynamo = new DynamoDBClient({ region: "us-east-2" });
 
