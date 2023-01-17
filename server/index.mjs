@@ -46,7 +46,7 @@ export const lambdaHandler = async (event, context) => {
                 break;
             case 'GET':
                 const command = new ScanCommand({ TableName: event.queryStringParameters.TableName });
-                body = await client.send(command);
+                body = await dynamo.send(command);
                 // body = await dynamo.scan({ TableName: event.queryStringParameters.TableName }).promise();
                 break;
             case 'POST':
