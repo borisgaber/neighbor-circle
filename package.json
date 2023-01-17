@@ -1,0 +1,9 @@
+{
+  "name": "neighbor_circle",
+  "version": "1.0.0",
+  "description": "Neighbor Circle",
+  "main": "server/index.js",
+  "repository": "https://github.com/borisgaber/neighbor-circle/actions",
+  "author": "Boris Gaber",
+  "license": "MIT"
+}
