@@ -12,7 +12,7 @@ const dynamo = new AWS.DynamoDB.DocumentClient();
  * PUT, or DELETE request respectively, passing in the payload to the
  * DynamoDB API as a JSON body.
  */
-exports.handler = async (event, context) => {
+export const lambdaHandler = async (event, context) => {
     //console.log('Received event:', JSON.stringify(event, null, 2));
 
     let body;
