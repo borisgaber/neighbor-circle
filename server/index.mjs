@@ -17,10 +17,8 @@
 //import AWS from 'aws-sdk';
 //const dynamo = new AWS.DynamoDB.DocumentClient();
 
-import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
-import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
-const ddbClient = new DynamoDBClient({ region: "us-east-2" });
-const dynamo = DynamoDBDocumentClient.from(ddbClient);
+import { DynamoDBClient, ScanCommand } from "@aws-sdk/client-dynamodb";
+const dynamo = DynamoDBClient({ region: "us-east-2" });
 
 /**
  * Demonstrates a simple HTTP endpoint using API Gateway. You have full
@@ -47,7 +45,9 @@ export const lambdaHandler = async (event, context) => {
                 body = await dynamo.delete(JSON.parse(event.body)).promise();
                 break;
             case 'GET':
-                body = await dynamo.scan({ TableName: event.queryStringParameters.TableName }).promise();
+                const command = new ScanCommand({ TableName: event.queryStringParameters.TableName });
+                body = await client.send(command);
+                // body = await dynamo.scan({ TableName: event.queryStringParameters.TableName }).promise();
                 break;
             case 'POST':
                 body = await dynamo.put(JSON.parse(event.body)).promise();
