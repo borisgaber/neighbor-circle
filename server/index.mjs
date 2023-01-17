@@ -18,7 +18,7 @@
 //const dynamo = new AWS.DynamoDB.DocumentClient();
 
 import { DynamoDBClient, ScanCommand } from "@aws-sdk/client-dynamodb";
-const dynamo = DynamoDBClient({ region: "us-east-2" });
+const dynamo = new DynamoDBClient({ region: "us-east-2" });
 
 /**
  * Demonstrates a simple HTTP endpoint using API Gateway. You have full
